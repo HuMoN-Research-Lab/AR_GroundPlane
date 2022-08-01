@@ -1,0 +1,63 @@
+Package 11
+
+- Tested with Unity 2019.4.23f1
+- Updated the QAvatar with rigged hands and fingers.
+- Enabled hand/finger retargeting in RTSkeleton.cs (can be disabled by commenting out #FINGERS)
+
+Package 10
+
+- Tested with Unity 2019.4.15f1 (LTS)
+- Arqus support
+- Custom Avatar
+- Updated RTClientSDK.Net
+- New thread handling
+- New connection handling (non blocking alternative)
+
+Package 9
+
+- Tested with Unity 2019.3.1f1
+- Update QAvatar.fbx to fix right hand issue
+
+Package 8
+
+- Tested with Unity 2018.4.16f1
+- Fixed T-Pose rotation issue
+
+Package 7
+
+- Added support for mecanim skeleton animation for QTM streaming skeleton data (available in QTM 2019)
+- Added Qualisys Avatar to skeleton example scene
+
+Package 6
+
+- Added support for streaming Analog channel data.
+- Added support for streaming Unlabeled marker data.
+
+Package 5.1
+
+- Added a Model9 definition for easier character mapping.
+- Added some more naming variants for joints to map better with some characters.
+
+Package 5.0
+
+- Updated scripts and package to Unity 2018.1.6f1
+- Fixed smaller issues with discovery that failed early for some network interfaces
+
+Package 4.0
+
+- Updated scripts to Unity 2017.2 version
+
+Package 3.0
+
+- Aligned the RTClientSDK.Net used to a newer one available on github.com/qualisys.
+
+Package 2.0
+
+- Fewer memory allocations giving higher performance.
+- Lots of refactoring in the RTClientSDK.Net code.
+- RTGazeStream object added to give support for streaming and visualizing gaze vectors.
+- Added gaze vector demo scene and QTM file.
+
+Package 1.0
+
+- The first one
