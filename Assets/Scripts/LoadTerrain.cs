@@ -1,6 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
-//using System;
+using System;
 using UnityEngine;
 
 using UXF;
@@ -11,10 +11,10 @@ public class LoadTerrain : MonoBehaviour
     //public Session session;
     public GameObject prefab_distractor;
     public GameObject prefab_target;
-    public GameObject Timer_Start_Box_Left;
-    public GameObject Timer_Start_Box_Right;
-    public GameObject Trial_End_Box_Left;
-    public GameObject Trial_End_Box_Right;
+    public GameObject Start_Bar_Left;
+    public GameObject Start_Bar_Right;
+    public GameObject End_Bar_Left;
+    public GameObject End_Bar_Right;
 
     public bool is_mirrored;
 
@@ -31,11 +31,11 @@ public class LoadTerrain : MonoBehaviour
         // Get file name from the world
         if(is_mirrored == false)
         {
-            Timer_Start_Box_Left.SetActive(true);
-            Timer_Start_Box_Right.SetActive(false);
+            Start_Bar_Left.SetActive(true);
+            Start_Bar_Right.SetActive(false);
 
-            Trial_End_Box_Left.SetActive(false);
-            Trial_End_Box_Right.SetActive(true);
+            End_Bar_Left.SetActive(false);
+            End_Bar_Right.SetActive(true);
             
             string file_name = trial.settings.GetString("File");
         
@@ -150,11 +150,11 @@ public class LoadTerrain : MonoBehaviour
  
         if(is_mirrored == true)
         {
-            Timer_Start_Box_Left.SetActive(false);
-            Timer_Start_Box_Right.SetActive(true);
+            Start_Bar_Left.SetActive(false);
+            Start_Bar_Right.SetActive(true);
 
-            Trial_End_Box_Left.SetActive(true);
-            Trial_End_Box_Right.SetActive(false);
+            End_Bar_Left.SetActive(true);
+            End_Bar_Right.SetActive(false);
 
             string file_name = trial.settings.GetString("Mirror");
         

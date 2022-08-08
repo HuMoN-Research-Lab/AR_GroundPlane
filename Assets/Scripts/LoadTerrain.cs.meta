@@ -3,7 +3,13 @@ guid: 34db2eb4868ed104db3a46817c1ac8ec
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - prefab_distractor: {fileID: 6938251681040704204, guid: bda7fdd951c9eee4580054bb281067b8, type: 3}
+  - prefab_target: {fileID: 7437686572083703912, guid: eddd8aa18d65f4b42b025520487cefe3, type: 3}
+  - Start_Bar_Left: {fileID: 4009828415230610292, guid: 116165475db5d2a408a7ee0f8539fd8b, type: 3}
+  - Start_Bar_Right: {fileID: 7654910849010768699, guid: e40f0881498cf2e4baa22ed980b520e1, type: 3}
+  - End_Bar_Left: {fileID: 4920538191477782388, guid: 08b7357606069444ca3433a2f9fe06e6, type: 3}
+  - End_Bar_Right: {fileID: 2656543295699234835, guid: 524c68163dd98184aa1712d461a7edf7, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
