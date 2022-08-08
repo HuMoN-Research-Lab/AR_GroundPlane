@@ -22,7 +22,7 @@ public class LoadTerrain : MonoBehaviour
     {
 
         Debug.Log("Terrain is Loaded");
-        //Debug.Log(is_mirrored);
+        Debug.Log("is_mirrored:" + is_mirrored);
         // get the positions of each of the projectors
         var Projector1_Pos_XYZ = GameObject.Find("CamProjector1").transform.position;
         var Projector2_Pos_XYZ = GameObject.Find("CamProjector2").transform.position;
