@@ -31,6 +31,14 @@ public class LoadTerrain : MonoBehaviour
         // Get file name from the world
         if(is_mirrored == false)
         {
+            Debug.Log("Position of StartBarLeft:" + Start_Bar_Left.transform.position);
+
+            Start_Bar_Left.transform.position = new Vector3(0, 0, 0);
+
+            Debug.Log("New Position of StartBarLeft:" + Start_Bar_Left.transform.position);
+
+            Debug.Break();
+            
             Start_Bar_Left.SetActive(true);
             Start_Bar_Right.SetActive(false);
 
@@ -54,95 +62,31 @@ public class LoadTerrain : MonoBehaviour
             {   
                 // Split up terrain by commas to give us each column
                 string[] col = terrain_info[i].Split(new char[] { ',' } );
+           
+                GameObject target = Instantiate(prefab_target);
 
-                // generate a game object based on the information in col
-                if (col[3] == "O")
+                if(col[5] == "P1")
                 {
-                    GameObject distractor = Instantiate(prefab_distractor);
+                    // add the x,z position of the appropriate camera to the position of the game object
+                    target.transform.position = new Vector3(float.Parse(col[0])+Projector1_Pos_XYZ[0],0,float.Parse(col[2])+Projector1_Pos_XYZ[2] );
                     
-                    if(col[5] == "P1")
-                    {
-                        // add the x,z position of the appropriate camera to the position of the game object
-                        distractor.transform.position = new Vector3(float.Parse(col[0])+Projector1_Pos_XYZ[0],0,float.Parse(col[2])+Projector1_Pos_XYZ[2] );
-                        
-                    }
-
-                    if(col[5] == "P2")
-                    {
-                        // add the x,z position of the appropriate camera to the position of the game object
-                        distractor.transform.position = new Vector3(float.Parse(col[0])+Projector2_Pos_XYZ[0],0,float.Parse(col[2])+Projector2_Pos_XYZ[2] );
-                        
-                    }
-
-                    if(col[5] == "P3")
-                    {
-                        // add the x,z position of the appropriate camera to the position of the game object
-                        distractor.transform.position = new Vector3(float.Parse(col[0])+Projector3_Pos_XYZ[0],0,float.Parse(col[2])+Projector3_Pos_XYZ[2] );
-                        
-                    }
-
-                    Debug.Log("Obs Loc:" + distractor.transform.position.ToString("F4"));
-
                 }
-                
 
-                if (col[3] == "C10")
+                if(col[5] == "P2")
                 {
-                    GameObject target = Instantiate(prefab_target);
-                    target.transform.Rotate(0,float.Parse(col[4]),0);
-
-                    if(col[5] == "P1")
-                    {
-                        // add the x,z position of the appropriate camera to the position of the game object
-                        target.transform.position = new Vector3(float.Parse(col[0])+Projector1_Pos_XYZ[0],0,float.Parse(col[2])+Projector1_Pos_XYZ[2] );
-                        
-                    }
-
-                    if(col[5] == "P2")
-                    {
-                        // add the x,z position of the appropriate camera to the position of the game object
-                        target.transform.position = new Vector3(float.Parse(col[0])+Projector2_Pos_XYZ[0],0,float.Parse(col[2])+Projector2_Pos_XYZ[2] );
-                        
-                    }
-
-                    if(col[5] == "P3")
-                    {
-                        // add the x,z position of the appropriate camera to the position of the game object
-                        target.transform.position = new Vector3(float.Parse(col[0])+Projector3_Pos_XYZ[0],0,float.Parse(col[2])+Projector3_Pos_XYZ[2] );
-                        
-                    }
-
-                    Debug.Log("Tar Loc:" + target.transform.position.ToString("F4"));
+                    // add the x,z position of the appropriate camera to the position of the game object
+                    target.transform.position = new Vector3(float.Parse(col[0])+Projector2_Pos_XYZ[0],0,float.Parse(col[2])+Projector2_Pos_XYZ[2] );
+                    
                 }
 
-                if (col[3] == "C80")
+                if(col[5] == "P3")
                 {
-                    GameObject target = Instantiate(prefab_target);
-                    target.transform.Rotate(0,float.Parse(col[4]),0);
-
-                    if(col[5] == "P1")
-                    {
-                        // add the x,z position of the appropriate camera to the position of the game object
-                        target.transform.position = new Vector3(float.Parse(col[0])+Projector1_Pos_XYZ[0],0,float.Parse(col[2])+Projector1_Pos_XYZ[2] );
-                        
-                    }
-
-                    if(col[5] == "P2")
-                    {
-                        // add the x,z position of the appropriate camera to the position of the game object
-                        target.transform.position = new Vector3(float.Parse(col[0])+Projector2_Pos_XYZ[0],0,float.Parse(col[2])+Projector2_Pos_XYZ[2] );
-                        
-                    }
-
-                    if(col[5] == "P3")
-                    {
-                        // add the x,z position of the appropriate camera to the position of the game object
-                        target.transform.position = new Vector3(float.Parse(col[0])+Projector3_Pos_XYZ[0],0,float.Parse(col[2])+Projector3_Pos_XYZ[2] );
-                        
-                    }
-
-                    Debug.Log("Tar Loc:" + target.transform.position.ToString("F4"));
+                    // add the x,z position of the appropriate camera to the position of the game object
+                    target.transform.position = new Vector3(float.Parse(col[0])+Projector3_Pos_XYZ[0],0,float.Parse(col[2])+Projector3_Pos_XYZ[2] );
+                    
                 }
+
+                Debug.Log("Tar Loc:" + target.transform.position.ToString("F4"));
 
             }
 
@@ -174,94 +118,32 @@ public class LoadTerrain : MonoBehaviour
                 // Split up terrain by commas to give us each column
                 string[] col = terrain_info[i].Split(new char[] { ',' } );
 
-                // generate a game object based on the information in col
-                if (col[3] == "O")
+                GameObject target = Instantiate(prefab_target);
+                target.transform.Rotate(0,float.Parse(col[4]),0);
+
+                if(col[5] == "P1")
                 {
-                    GameObject distractor = Instantiate(prefab_distractor);
+                    // add the x,z position of the appropriate camera to the position of the game object
+                    target.transform.position = new Vector3(float.Parse(col[0])+Projector1_Pos_XYZ[0],0,float.Parse(col[2])+Projector1_Pos_XYZ[2] );
                     
-                    if(col[5] == "P1")
-                    {
-                        // add the x,z position of the appropriate camera to the position of the game object
-                        distractor.transform.position = new Vector3(float.Parse(col[0])+Projector1_Pos_XYZ[0],0,float.Parse(col[2])+Projector1_Pos_XYZ[2] );
-                        
-                    }
-
-                    if(col[5] == "P2")
-                    {
-                        // add the x,z position of the appropriate camera to the position of the game object
-                        distractor.transform.position = new Vector3(float.Parse(col[0])+Projector2_Pos_XYZ[0],0,float.Parse(col[2])+Projector2_Pos_XYZ[2] );
-                        
-                    }
-
-                    if(col[5] == "P3")
-                    {
-                        // add the x,z position of the appropriate camera to the position of the game object
-                        distractor.transform.position = new Vector3(float.Parse(col[0])+Projector3_Pos_XYZ[0],0,float.Parse(col[2])+Projector3_Pos_XYZ[2] );
-                        
-                    } 
-
-                    Debug.Log("Obs Loc:" + distractor.transform.position.ToString("F4"));
-
                 }
+
+                if(col[5] == "P2")
+                {
+                    // add the x,z position of the appropriate camera to the position of the game object
+                    target.transform.position = new Vector3(float.Parse(col[0])+Projector2_Pos_XYZ[0],0,float.Parse(col[2])+Projector2_Pos_XYZ[2] );
+                    
+                }
+
+                if(col[5] == "P3")
+                {
+                    // add the x,z position of the appropriate camera to the position of the game object
+                    target.transform.position = new Vector3(float.Parse(col[0])+Projector3_Pos_XYZ[0],0,float.Parse(col[2])+Projector3_Pos_XYZ[2] );
+                    
+                }
+
+                Debug.Log("Tar Loc:" + target.transform.position.ToString("F4"));
                 
-
-                if (col[3] == "C10")
-                {
-                    GameObject target = Instantiate(prefab_target);
-                    target.transform.Rotate(0,float.Parse(col[4]),0);
-
-                    if(col[5] == "P1")
-                    {
-                        // add the x,z position of the appropriate camera to the position of the game object
-                        target.transform.position = new Vector3(float.Parse(col[0])+Projector1_Pos_XYZ[0],0,float.Parse(col[2])+Projector1_Pos_XYZ[2] );
-                        
-                    }
-
-                    if(col[5] == "P2")
-                    {
-                        // add the x,z position of the appropriate camera to the position of the game object
-                        target.transform.position = new Vector3(float.Parse(col[0])+Projector2_Pos_XYZ[0],0,float.Parse(col[2])+Projector2_Pos_XYZ[2] );
-                        
-                    }
-
-                    if(col[5] == "P3")
-                    {
-                        // add the x,z position of the appropriate camera to the position of the game object
-                        target.transform.position = new Vector3(float.Parse(col[0])+Projector3_Pos_XYZ[0],0,float.Parse(col[2])+Projector3_Pos_XYZ[2] );
-                        
-                    }
-
-                    Debug.Log("Tar Loc:" + target.transform.position.ToString("F4"));
-                }
-
-                if (col[3] == "C80")
-                {
-                    GameObject target = Instantiate(prefab_target);
-                    target.transform.Rotate(0,float.Parse(col[4]),0);
-
-                    if(col[5] == "P1")
-                    {
-                        // add the x,z position of the appropriate camera to the position of the game object
-                        target.transform.position = new Vector3(float.Parse(col[0])+Projector1_Pos_XYZ[0],0,float.Parse(col[2])+Projector1_Pos_XYZ[2] );
-                        
-                    }
-
-                    if(col[5] == "P2")
-                    {
-                        // add the x,z position of the appropriate camera to the position of the game object
-                        target.transform.position = new Vector3(float.Parse(col[0])+Projector2_Pos_XYZ[0],0,float.Parse(col[2])+Projector2_Pos_XYZ[2] );
-                        
-                    }
-
-                    if(col[5] == "P3")
-                    {
-                        // add the x,z position of the appropriate camera to the position of the game object
-                        target.transform.position = new Vector3(float.Parse(col[0])+Projector3_Pos_XYZ[0],0,float.Parse(col[2])+Projector3_Pos_XYZ[2] );
-                        
-                    }
-
-                    Debug.Log("Tar Loc:" + target.transform.position.ToString("F4"));
-                }
 
             }
 
