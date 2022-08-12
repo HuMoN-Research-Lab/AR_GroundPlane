@@ -47,7 +47,7 @@ namespace QualisysRealTime.Unity
                 newMarker.transform.parent = markerRoot.transform;
                 newMarker.transform.localScale = Vector3.one * markerScale;
                 newMarker.SetActive(false);
-                // TDW added code from here to... 3/17/2022
+                // TDW on 2022-08-12 copied code, previously added on 2022-03-17, from here to...
                 newMarker.AddComponent<Rigidbody>();
                 newMarker.GetComponent<Rigidbody>().useGravity = false;
                 newMarker.AddComponent<CapsuleCollider>(); 
@@ -92,7 +92,7 @@ namespace QualisysRealTime.Unity
                     markers[i].SetActive(true);
                     markers[i].GetComponent<Renderer>().enabled = visibleMarkers;
                     markers[i].transform.localScale = Vector3.one * markerScale;
-                    // added code below :: Rotate around the y-axis TDW 2022-03-14
+                    // TDW on 2022-08-12, copied code from work done on 2022-03-14 that Rotates the marker position around the y-axis 
                     markers[i].transform.RotateAround(WorldCenter, Vector3.up, 180);
                 }
                 else
