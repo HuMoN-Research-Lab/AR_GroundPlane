@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.4366757, g: 0.48427194, b: 0.5645252, a: 1}
+  m_IndirectSpecularColor: {r: 0.4366756, g: 0.48427194, b: 0.5645252, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -282,6 +282,7 @@ GameObject:
   - component: {fileID: 680664929}
   - component: {fileID: 680664928}
   - component: {fileID: 680664932}
+  - component: {fileID: 680664933}
   m_Layer: 0
   m_Name: ScriptHolder
   m_TagString: Untagged
@@ -406,6 +407,20 @@ MonoBehaviour:
   PositionOffset: {x: 0, y: 0, z: 0}
   RotationOffset: {x: 0, y: 0, z: 0}
   useObjectOrientation: 1
+  visibleMarkers: 1
+  markerScale: 0.05
+--- !u!114 &680664933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 680664924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 961c4d7c7936b2441b30e3479ee07580, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   visibleMarkers: 1
   markerScale: 0.05
 --- !u!1 &705507993
