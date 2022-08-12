@@ -19,6 +19,8 @@ namespace QualisysRealTime.Unity
 
         private bool streaming = false;
 
+        private Vector3 WorldCenter = new Vector3(0, 0, 0); // set the world position
+
         // Use this for initialization
         void Start()
         {
@@ -45,6 +47,12 @@ namespace QualisysRealTime.Unity
                 newMarker.transform.parent = markerRoot.transform;
                 newMarker.transform.localScale = Vector3.one * markerScale;
                 newMarker.SetActive(false);
+                // TDW added code from here to... 3/17/2022
+                newMarker.AddComponent<Rigidbody>();
+                newMarker.GetComponent<Rigidbody>().useGravity = false;
+                newMarker.AddComponent<CapsuleCollider>(); 
+                newMarker.GetComponent<CapsuleCollider>().isTrigger = true;
+                // here
                 markers.Add(newMarker);
             }
         }
@@ -84,6 +92,8 @@ namespace QualisysRealTime.Unity
                     markers[i].SetActive(true);
                     markers[i].GetComponent<Renderer>().enabled = visibleMarkers;
                     markers[i].transform.localScale = Vector3.one * markerScale;
+                    // added code below :: Rotate around the y-axis TDW 2022-03-14
+                    markers[i].transform.RotateAround(WorldCenter, Vector3.up, 180);
                 }
                 else
                 {
