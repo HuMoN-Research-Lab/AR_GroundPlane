@@ -7,13 +7,21 @@ using UXF;
 public class StartTrial : MonoBehaviour
 {
     public LoadTerrain terrain_bool;
-    public Session session;
-    void OnTriggerEnter()
+    //public Session session;
+    void OnTriggerEnter(Collider other)
     {
-        if(!session.InTrial)
+        if(!Session.instance.InTrial)
         {
-            terrain_bool.is_mirrored = false;
-            session.BeginNextTrial();
+            if(other.transform.position.z < 0)
+            {
+                terrain_bool.is_mirrored = false;
+                Session.instance.BeginNextTrial();
+            }
+            else if(other.transform.position.z > 0)
+            {
+                terrain_bool.is_mirrored = true;
+                Session.instance.BeginNextTrial();
+            }
         }
     }
     

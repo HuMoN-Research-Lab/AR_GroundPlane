@@ -6,13 +6,12 @@ using UXF;
 
 public class EndTrial : MonoBehaviour
 {
-    public Session session;
     void OnTriggerEnter()
     {
-        if(session.InTrial)
+        if(Session.instance.InTrial) // I do not need to have a public session reference; I can simply use this Session.instance to access the current "session" of UXF
         {
             Debug.Log("Ending Trial");
-            session.EndCurrentTrial();
+            Session.instance.EndCurrentTrial();
 
             GameObject[] terrain_features;
             terrain_features = GameObject.FindGameObjectsWithTag("Terrain_Feature");
