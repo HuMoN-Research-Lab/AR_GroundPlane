@@ -4,38 +4,31 @@ using UnityEngine;
 
 using UXF;
 
-public class Timer : MonoBehaviour
+public class TimerStart : MonoBehaviour
 {
-    public float timer_length; // set the length of the trial
-    public AudioClip trial_fail_sound;
-    private bool trial_started;
-    
-    void OnTriggerEnter()
+    public Session session;
+    public AudioClip failSound;
+    public float timer_length;
+
+    public void BeginCountdown()
     {
-        if(trial_started != true)
-        {
-            trial_started = true;
-            Debug.Log("Trial Started!");
-        }
+        StartCoroutine(Countdown());
     }
 
-    public void Update()
-    { 
-        if(trial_started)
-        {
-            timer_length -= Time.deltaTime; // a current quirk of this system; the reason it stops counting is because this object (cloned object) gets deleted
-        }
-
-        if(timer_length < 0 & trial_started == true)
-        {
-            // if we got to this stage, that means we moved too slow
-            Session.instance.CurrentTrial.result["outcome"] = "failure";
-            Debug.Log("Trial Failed");
-
-            // we will play a clip at position above origin, 100% volume
-            AudioSource.PlayClipAtPoint(trial_fail_sound, new Vector3(0, 1.3f, 0), 1.0f);
-            trial_started = false;
-        }
+    public void StopCountdown()
+    {
+        StopAllCoroutines();
     }
 
+    IEnumerator Countdown()
+    {
+        yield return new WaitForSeconds(timer_length);
+
+        // if we got to this stage, that means we moved too slow
+        session.CurrentTrial.result["outcome"] = "tooslow";
+        session.EndCurrentTrial();
+
+        // we will play a clip at position above origin, 100% volume
+        AudioSource.PlayClipAtPoint(failSound, new Vector3(0, 1.3f, 0), 1.0f);
+    }
 }

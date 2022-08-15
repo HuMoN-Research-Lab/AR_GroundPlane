@@ -212,38 +212,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 90}
---- !u!1 &426385057
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 426385058}
-  m_Layer: 0
-  m_Name: CubeHolder
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &426385058
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 426385057}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -16.178837, y: -8.261077, z: -0.48}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1803798474}
-  m_Father: {fileID: 0}
-  m_RootOrder: 11
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &427522381 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7623703514569581061, guid: 3d0626c45b6e7be46bf493c5106e9625, type: 3}
@@ -358,7 +326,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 522c76cbcc779aa4bbbfc07816f5916d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LoadTerrainScript: {fileID: 0}
+  terrain_bool: {fileID: 680664927}
 --- !u!114 &680664930
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -371,9 +339,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bec724baf52be241b86f088da3a2567, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TimerScript: {fileID: 0}
-  trial_succeed_sound: {fileID: 0}
-  trial_fail_sound: {fileID: 0}
 --- !u!114 &680664931
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1212,13 +1177,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1803798470}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 16.558836, y: 8.941077, z: -9.561748}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.38, y: 0.68, z: -8.76}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 426385058}
-  m_RootOrder: 0
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &1803798475
 Rigidbody:
@@ -1446,7 +1411,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1050871087857097051, guid: d7f21cd20ee851942a46ac222e54911f, type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 1050871087857097051, guid: d7f21cd20ee851942a46ac222e54911f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1508,7 +1473,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 522c76cbcc779aa4bbbfc07816f5916d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LoadTerrainScript: {fileID: 680664927}
+  terrain_bool: {fileID: 680664927}
 --- !u!114 &1050871088094261843
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1538,7 +1503,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7623703514569581062, guid: 3d0626c45b6e7be46bf493c5106e9625, type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7623703514569581062, guid: 3d0626c45b6e7be46bf493c5106e9625, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1594,10 +1559,6 @@ PrefabInstance:
       objectReference: {fileID: 777839398}
     - target: {fileID: 7623703514569581306, guid: 3d0626c45b6e7be46bf493c5106e9625, type: 3}
       propertyPath: terrain_bool
-      value: 
-      objectReference: {fileID: 680664927}
-    - target: {fileID: 7623703514569581306, guid: 3d0626c45b6e7be46bf493c5106e9625, type: 3}
-      propertyPath: LoadTerrainScript
       value: 
       objectReference: {fileID: 680664927}
     m_RemovedComponents: []

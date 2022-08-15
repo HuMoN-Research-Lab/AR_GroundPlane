@@ -110,6 +110,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bec724baf52be241b86f088da3a2567, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TimerScript: {fileID: 6621601965156824597, guid: 116165475db5d2a408a7ee0f8539fd8b, type: 3}
-  trial_succeed_sound: {fileID: 8300000, guid: edd0b8d3493e3de418dd5842cbb0b983, type: 3}
-  trial_fail_sound: {fileID: 8300000, guid: 5c8bdd53bc2685446902742d1287e631, type: 3}
+  session: {fileID: 0}

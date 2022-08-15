@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 4009828415230610288}
   - component: {fileID: 4009828415230610289}
   - component: {fileID: 4009828415230610294}
-  - component: {fileID: 6621601965156824597}
   m_Layer: 0
   m_Name: Start_Bar
   m_TagString: Terrain_Feature
@@ -98,18 +97,3 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 5000, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &6621601965156824597
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4009828415230610292}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 07cbbb37c69c0b54b901be2c129bf33d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timer_length: 12
-  trial_succeed_sound: {fileID: 8300000, guid: edd0b8d3493e3de418dd5842cbb0b983, type: 3}
-  trial_fail_sound: {fileID: 8300000, guid: 5c8bdd53bc2685446902742d1287e631, type: 3}
