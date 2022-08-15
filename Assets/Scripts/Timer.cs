@@ -29,7 +29,7 @@ public class Timer : MonoBehaviour
         if(timer_length < 0 & trial_started == true)
         {
             // if we got to this stage, that means we moved too slow
-            Session.instance.CurrentTrial.result["time_remaining"] = timer_length;
+            Session.instance.CurrentTrial.result["outcome"] = "failure";
             Debug.Log("Trial Failed");
 
             // we will play a clip at position above origin, 100% volume
