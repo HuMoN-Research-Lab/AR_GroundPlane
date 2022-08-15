@@ -20,7 +20,6 @@ public class GenerateStartEndBars : MonoBehaviour
         {
             GameObject start_bar = Instantiate(prefab_Start_Bar);
             GameObject end_bar = Instantiate(prefab_End_Bar);
-            Debug.Log("Generating + Positioning Start and End bars...");
 
             if(other.transform.position.z < 0)
             {

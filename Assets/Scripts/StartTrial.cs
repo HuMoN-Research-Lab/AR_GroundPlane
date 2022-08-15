@@ -6,22 +6,26 @@ using UXF;
 
 public class StartTrial : MonoBehaviour
 {
-    public LoadTerrain terrain_bool;
+    public LoadTerrain LoadTerrainScript; // attach LoadTerrain Script to gameobject
     
     //public Session session;
     void OnTriggerEnter(Collider other)
-    {
+    {  
+        Debug.Log("Session start collider triggered");
         if(!Session.instance.InTrial)
         {
+            Debug.Log("Not in session, check terrain mirror and begin next trial");
             if(other.transform.position.z < 0)
             {
                 // establish which direction the terrain is "going" 
-                terrain_bool.is_mirrored = false;
+                LoadTerrainScript.is_mirrored = false;
+
                 Session.instance.BeginNextTrial();
             }
             else if(other.transform.position.z > 0)
             {
-                terrain_bool.is_mirrored = true;
+                LoadTerrainScript.is_mirrored = true;
+
                 Session.instance.BeginNextTrial();
             }
         }
