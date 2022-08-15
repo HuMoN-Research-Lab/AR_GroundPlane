@@ -7,6 +7,7 @@ using UXF;
 public class StartTrial : MonoBehaviour
 {
     public LoadTerrain terrain_bool;
+    
     //public Session session;
     void OnTriggerEnter(Collider other)
     {
@@ -14,6 +15,7 @@ public class StartTrial : MonoBehaviour
         {
             if(other.transform.position.z < 0)
             {
+                // establish which direction the terrain is "going" 
                 terrain_bool.is_mirrored = false;
                 Session.instance.BeginNextTrial();
             }

@@ -16,22 +16,25 @@ public class GenerateStartEndBars : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        GameObject start_bar = Instantiate(prefab_Start_Bar);
-        GameObject end_bar = Instantiate(prefab_End_Bar);
-        Debug.Log("Generating + Positioning Start and End bars...");
-
-        if(other.transform.position.z < 0)
+        if(GameObject.Find("Start_Bar(Clone)") == null)
         {
-            // If participant starts on the left, have the start bar start on the left and the end bar on the right
-            start_bar.transform.position = left_bar_location_xyz;
-            end_bar.transform.position = right_bar_location_xyz;
+            GameObject start_bar = Instantiate(prefab_Start_Bar);
+            GameObject end_bar = Instantiate(prefab_End_Bar);
+            Debug.Log("Generating + Positioning Start and End bars...");
 
-        }
-        else if(other.transform.position.z > 0)
-        {
-            // start bar on the *right*, end bar on the *left*
-            start_bar.transform.position = right_bar_location_xyz;
-            end_bar.transform.position = left_bar_location_xyz;
+            if(other.transform.position.z < 0)
+            {
+                // If participant starts on the left, have the start bar start on the left and the end bar on the right
+                start_bar.transform.position = left_bar_location_xyz;
+                end_bar.transform.position = right_bar_location_xyz;
+
+            }
+            else if(other.transform.position.z > 0)
+            {
+                // start bar on the *right*, end bar on the *left*
+                start_bar.transform.position = right_bar_location_xyz;
+                end_bar.transform.position = left_bar_location_xyz;
+            }
         }
     }
 }
