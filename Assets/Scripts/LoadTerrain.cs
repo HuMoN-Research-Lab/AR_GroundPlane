@@ -9,15 +9,8 @@ public class LoadTerrain : MonoBehaviour
 {
 
     //public Session session;
-    public GameObject prefab_distractor;
     public GameObject prefab_target;
-    public GameObject Start_Bar_Left;
-    public GameObject Start_Bar_Right;
-    public GameObject End_Bar_Left;
-    public GameObject End_Bar_Right;
-
     public bool is_mirrored;
-
     private string file_name;
     private TextAsset terrain_file;
 
