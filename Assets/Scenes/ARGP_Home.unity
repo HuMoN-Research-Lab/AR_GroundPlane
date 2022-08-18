@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.4366756, g: 0.48427194, b: 0.5645252, a: 1}
+  m_IndirectSpecularColor: {r: 0.4366757, g: 0.48427194, b: 0.5645252, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -139,6 +139,7 @@ GameObject:
   - component: {fileID: 329207886}
   - component: {fileID: 329207885}
   - component: {fileID: 329207884}
+  - component: {fileID: 329207887}
   m_Layer: 0
   m_Name: CamProjector1
   m_TagString: Untagged
@@ -179,7 +180,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 8.473296
+  field of view: 8.469766
   orthographic: 0
   orthographic size: 5
   m_Depth: 0
@@ -212,6 +213,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 90}
+--- !u!114 &329207887
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 329207883}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97b0098d8bae6184e81aee0f9cd784be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  a_top_left_xz: {x: -652.3, y: 0, z: -2785.6}
+  b_top_right_xz: {x: -697.5, y: 0, z: 1079.8}
+  c_bottom_right_xz: {x: 1493.2, y: 0, z: 1087.2}
+  d_bottom_left_xz: {x: 1518.3, y: 0, z: -2769.1}
 --- !u!1 &427522381 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7623703514569581061, guid: 3d0626c45b6e7be46bf493c5106e9625, type: 3}
