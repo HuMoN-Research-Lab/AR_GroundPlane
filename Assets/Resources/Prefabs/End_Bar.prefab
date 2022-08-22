@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2656543295699234838}
   - component: {fileID: 2656543295699234833}
   - component: {fileID: 2656543295699234836}
+  - component: {fileID: 8686465010695417566}
   m_Layer: 0
   m_Name: End_Bar
   m_TagString: Terrain_Feature
@@ -110,4 +111,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bec724baf52be241b86f088da3a2567, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  session: {fileID: 0}
+--- !u!114 &8686465010695417566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2656543295699234835}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f39dd225dbf8ca45bebc6b501f9c89f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  happy_sound: {fileID: 8300000, guid: edd0b8d3493e3de418dd5842cbb0b983, type: 3}
