@@ -12,17 +12,24 @@ public class CameraPositioning : MonoBehaviour
     public Vector3 c_bottom_right_xz;
     public Vector3 d_bottom_left_xz;
 
-    public void CalculateCameraPosition()
+    void Start()
     {
         Camera this_camera = gameObject.GetComponent<Camera>();
 
-        float a_b_length = Vector3.Distance(a_top_left_xz,b_top_right_xz);
+        Debug.Log("Camera Position:" + gameObject.transform.position);
 
+        float a_b_length = Vector3.Distance(a_top_left_xz,b_top_right_xz);
 
         float this_camera_FOV = this_camera.fieldOfView;
 
-        float camera_height_denominator = Mathf.Tan(this_camera_FOV)/2f; 
+        float this_camera_FOV_horizontal = Camera.VerticalToHorizontalFieldOfView(this_camera_FOV,this_camera.aspect);
 
+        Debug.Log("camera FOV Horizontal: " + this_camera_FOV_horizontal);
+
+        float camera_height_denominator = Mathf.Tan(7.5f * (Mathf.PI/180f)); 
+
+        Debug.Log(camera_height_denominator);
+        
         float camera_height_numerator = a_b_length/2f;
 
 
@@ -32,7 +39,17 @@ public class CameraPositioning : MonoBehaviour
 
         float camera_y_pos = camera_height_numerator/camera_height_denominator;
 
-        gameObject.transform.position = new Vector3(camera_x_pos, camera_y_pos, camera_z_pos);
+        // Convert from CM to M
+
+        float camera_x_pos_meters = camera_x_pos/1000;
+
+        float camera_y_pos_meters = camera_y_pos/1000;
+
+        float camera_z_pos_meters = camera_z_pos/1000;
+
+        gameObject.transform.position = new Vector3(camera_x_pos_meters, camera_y_pos_meters, camera_z_pos_meters);
+
+        Debug.Log("NEW Camera Position:" + gameObject.transform.position);
 
     }
     

@@ -225,10 +225,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97b0098d8bae6184e81aee0f9cd784be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  a_top_left_xz: {x: -652.3, y: 0, z: -2785.6}
-  b_top_right_xz: {x: -697.5, y: 0, z: 1079.8}
-  c_bottom_right_xz: {x: 1493.2, y: 0, z: 1087.2}
-  d_bottom_left_xz: {x: 1518.3, y: 0, z: -2769.1}
+  a_top_left_xz: {x: 0, y: 0, z: 0}
+  b_top_right_xz: {x: 0, y: 0, z: 0}
+  c_bottom_right_xz: {x: 0, y: 0, z: 0}
+  d_bottom_left_xz: {x: 0, y: 0, z: 0}
 --- !u!1 &427522381 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7623703514569581061, guid: 3d0626c45b6e7be46bf493c5106e9625, type: 3}
@@ -944,6 +944,7 @@ GameObject:
   - component: {fileID: 1340256286}
   - component: {fileID: 1340256285}
   - component: {fileID: 1340256284}
+  - component: {fileID: 1340256287}
   m_Layer: 0
   m_Name: CamProjector3
   m_TagString: Untagged
@@ -1017,6 +1018,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 90}
+--- !u!114 &1340256287
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1340256283}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97b0098d8bae6184e81aee0f9cd784be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  a_top_left_xz: {x: 0, y: 0, z: 0}
+  b_top_right_xz: {x: 0, y: 0, z: 0}
+  c_bottom_right_xz: {x: 0, y: 0, z: 0}
+  d_bottom_left_xz: {x: 0, y: 0, z: 0}
 --- !u!1 &1507259250
 GameObject:
   m_ObjectHideFlags: 0
@@ -1240,6 +1257,7 @@ GameObject:
   - component: {fileID: 2008170055}
   - component: {fileID: 2008170054}
   - component: {fileID: 2008170053}
+  - component: {fileID: 2008170056}
   m_Layer: 0
   m_Name: CamProjector2
   m_TagString: Untagged
@@ -1313,6 +1331,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 90}
+--- !u!114 &2008170056
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2008170052}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97b0098d8bae6184e81aee0f9cd784be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  a_top_left_xz: {x: 0, y: 0, z: 0}
+  b_top_right_xz: {x: 0, y: 0, z: 0}
+  c_bottom_right_xz: {x: 0, y: 0, z: 0}
+  d_bottom_left_xz: {x: 0, y: 0, z: 0}
 --- !u!1 &2030287168
 GameObject:
   m_ObjectHideFlags: 0
