@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.4366756, g: 0.48427194, b: 0.5645252, a: 1}
+  m_IndirectSpecularColor: {r: 0.4366757, g: 0.48427194, b: 0.5645252, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -180,7 +180,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 8.469766
+  field of view: 8.470562
   orthographic: 0
   orthographic size: 5
   m_Depth: 0
@@ -267,6 +267,7 @@ GameObject:
   - component: {fileID: 680664928}
   - component: {fileID: 680664932}
   - component: {fileID: 680664933}
+  - component: {fileID: 680664934}
   m_Layer: 0
   m_Name: ScriptHolder
   m_TagString: Untagged
@@ -398,6 +399,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   visibleMarkers: 1
   markerScale: 0.05
+--- !u!114 &680664934
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 680664924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6eb9704473362ce4b8ace8e4587cf919, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -971,7 +984,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 11.278142
+  field of view: 8.470562
   orthographic: 0
   orthographic size: 5
   m_Depth: 0
@@ -1267,7 +1280,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 11.278142
+  field of view: 8.467093
   orthographic: 0
   orthographic size: 5
   m_Depth: 0

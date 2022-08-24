@@ -14,6 +14,7 @@ public class TimeOutTimer : MonoBehaviour
     IEnumerator Countdown()
     {
         Debug.Log("Timer has started");
+   
         yield return new WaitForSeconds(time_out_threshold);
 
         Debug.Log("Trial timed out :( ");
@@ -28,16 +29,21 @@ public class TimeOutTimer : MonoBehaviour
             Destroy(tf);
         }
 
+        
+
     }
 
     void OnTriggerEnter()
     {
+        string this_session_string = Session.instance.CurrentTrial.settings.GetString("File");
+
+        Debug.Log(this_session_string);
+
         gameObject.GetComponent<BoxCollider>().enabled = false;
-        StartCoroutine(Countdown());
 
+        if(!this_session_string.Equals("Calibration") & !this_session_string.Equals("Frisbee"))
+        {
+            StartCoroutine(Countdown());
+        }
     }
-
-    
-
-
 }
