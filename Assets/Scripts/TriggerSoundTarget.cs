@@ -26,16 +26,19 @@ public class TriggerSoundTarget : MonoBehaviour
             AudioSource.PlayClipAtPoint(soundTrigger, transform.position, 1.0f);
             Debug.Log("Triggered Tar:" + other.transform.position.ToString("F4"));
 
+            gameObject.GetComponent<BoxCollider>().enabled = false;
+
         }
         
     }
 
-    void OnTriggerExit()
-    {
+    // By disabling the game object, I don't think that we need this.
+    //void OnTriggerExit()
+    //{
 
-        dwell_time_tracker = 0;
+    //    dwell_time_tracker = 0;
          
         
-    }
+    //}
 }
 
