@@ -16,29 +16,30 @@ public class TriggerSoundTarget : MonoBehaviour
     void OnTriggerStay(Collider other)
     {
 
-        dwell_time_tracker += 1; // add to the tracker for every frame
+        dwell_time_tracker += 1; // add TIME to tracker for every frame
+        
+        Debug.Log("dwell_time_tracker:" + dwell_time_tracker);
     
 
-        if (dwell_time_tracker == dwell_time_threshold)
+        if (dwell_time_tracker > dwell_time_threshold)
         {
 
             // play the collect sound (at the same position as the target, 100% volume)
             AudioSource.PlayClipAtPoint(soundTrigger, transform.position, 1.0f);
             Debug.Log("Triggered Tar:" + other.transform.position.ToString("F4"));
 
-            gameObject.GetComponent<BoxCollider>().enabled = false;
+            // co-routines might be an option here
 
         }
         
     }
 
-    // By disabling the game object, I don't think that we need this.
-    //void OnTriggerExit()
-    //{
+    void OnTriggerExit()
+    {
 
-    //    dwell_time_tracker = 0;
+       dwell_time_tracker = 0;
          
         
-    //}
+    }
 }
 
