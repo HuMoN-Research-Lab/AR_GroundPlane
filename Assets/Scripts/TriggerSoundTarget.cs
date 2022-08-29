@@ -11,22 +11,32 @@ public class TriggerSoundTarget : MonoBehaviour
 
     private float dwell_time_tracker; // tracks the number of frames that the object has been inside of the collider
 
+    private bool something_is_in_this_trigger = false;
+
+    private string name_of_the_thing_in_this_trigger;
 
     /// OnTriggerStay is called almost every frame; https://docs.unity3d.com/ScriptReference/Collider.OnTriggerStay.html
-    void OnTriggerStay(Collider other)
+    void OnTriggerStay(Collider colliding_object)
     {
+        if(!something_is_in_this_trigger)
+        {
+            something_is_in_this_trigger = true;
+            name_of_the_thing_in_this_trigger = colliding_object.name;
 
-        dwell_time_tracker += 1; // add TIME to tracker for every frame
-        
-        Debug.Log("dwell_time_tracker:" + dwell_time_tracker);
-    
+        }
 
-        if (dwell_time_tracker > dwell_time_threshold)
+        if(colliding_object.name == name_of_the_thing_in_this_trigger)
+        {
+            dwell_time_tracker += 1; // add TIME to tracker for every frame
+            
+        }
+
+        if (dwell_time_tracker == dwell_time_threshold)
         {
 
             // play the collect sound (at the same position as the target, 100% volume)
             AudioSource.PlayClipAtPoint(soundTrigger, transform.position, 1.0f);
-            Debug.Log("Triggered Tar:" + other.transform.position.ToString("F4"));
+            Debug.Log("Triggered Tar:" + colliding_object.transform.position.ToString("F4"));
 
             // co-routines might be an option here
 
