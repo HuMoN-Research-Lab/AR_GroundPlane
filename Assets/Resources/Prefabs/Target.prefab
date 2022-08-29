@@ -112,4 +112,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   soundTrigger: {fileID: 8300000, guid: 59b531360ff37bb40869d0cc2cf50e6c, type: 3}
-  dwell_time_threshold: 20
+  dwell_time_threshold: 0.075
