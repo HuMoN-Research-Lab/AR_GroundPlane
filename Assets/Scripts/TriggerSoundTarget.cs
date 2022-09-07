@@ -11,30 +11,38 @@ public class TriggerSoundTarget : MonoBehaviour
 
     private float dwell_time_tracker; // tracks the number of frames that the object has been inside of the collider
 
+    private bool something_is_in_this_trigger = false;
+
+    private bool sound_has_played = false;
+
+    private string name_of_the_thing_in_this_trigger;
 
     /// OnTriggerStay is called almost every frame; https://docs.unity3d.com/ScriptReference/Collider.OnTriggerStay.html
-    void OnTriggerStay(Collider other)
+    void OnTriggerStay(Collider colliding_object)
     {
-
-        dwell_time_tracker += 1; // add to the tracker for every frame
-    
-
-        if (dwell_time_tracker == dwell_time_threshold)
+        if(!something_is_in_this_trigger)
         {
-
-            // play the collect sound (at the same position as the target, 100% volume)
-            AudioSource.PlayClipAtPoint(soundTrigger, transform.position, 1.0f);
-            Debug.Log("Triggered Tar:" + other.transform.position.ToString("F4"));
+            something_is_in_this_trigger = true;
+            name_of_the_thing_in_this_trigger = colliding_object.name;
 
         }
-        
-    }
 
-    void OnTriggerExit()
-    {
+        if(colliding_object.name == name_of_the_thing_in_this_trigger)
+        {
+            dwell_time_tracker += Time.deltaTime; // add TIME to tracker for every frame
+            
+        }
 
-        dwell_time_tracker = 0;
-         
+        if(dwell_time_tracker > dwell_time_threshold)
+        {
+            if(!sound_has_played)
+            {
+                // play the collect sound (at the same position as the target, 100% volume)
+                AudioSource.PlayClipAtPoint(soundTrigger, transform.position, 1.0f);
+                sound_has_played = true;
+                Debug.Log("Triggered Tar:" + colliding_object.transform.position.ToString("F4"));
+            }
+        }
         
     }
 }
