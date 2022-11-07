@@ -14,7 +14,7 @@ public class LoadTerrain : MonoBehaviour
     private string file_name;
     private TextAsset terrain_file;
 
-    private UXF.UXFDataTable terrain_objects_data_table;
+    private Dictionary<int,Vector3> terrain_objects_dict;
 
     private UXFDataRow new_row;
 
@@ -57,7 +57,7 @@ public class LoadTerrain : MonoBehaviour
         
         // create a dictonary to fill with all terrain objects
 
-        // terrain_objects_data_table = new UXFDataTable(1,"test");
+        terrain_objects_dict = new Dictionary<int, Vector3>();
 
         for (int i = 1; i < terrain_info.Length -1; i++)
         {   
@@ -86,10 +86,16 @@ public class LoadTerrain : MonoBehaviour
 
             Debug.Log("Tar Loc:" + target.transform.position.ToString("F4"));
 
-            // new_row = new UXFDataRow[1, target.transform.position.ToString("F4")];
-
-            // terrain_objects_data_table.AddCompleteRow(new_row);
+            terrain_objects_dict.Add(i,target.transform.position);
 
         }
+
+        Debug.Log("Terrain Dictionary: "+ terrain_objects_dict);
+
+        foreach(var item in terrain_objects_dict)
+        {
+            Debug.Log("Dictionary items:" + item);
+        }
+
     }
 }
