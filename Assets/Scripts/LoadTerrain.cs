@@ -14,6 +14,10 @@ public class LoadTerrain : MonoBehaviour
     private string file_name;
     private TextAsset terrain_file;
 
+    private UXF.UXFDataTable terrain_objects_data_table;
+
+    private UXFDataRow new_row;
+
     public void GenerateTerrain(Trial trial)
     {
 
@@ -38,9 +42,11 @@ public class LoadTerrain : MonoBehaviour
         
         Debug.Log("Name of Trial File: " + file_name);
 
+        Debug.Log("trialnum-" + trial.number + "-filename-" + file_name); // this will be the name of the file we're saving
+
         TextAsset terrain_file = Resources.Load<TextAsset>(file_name); // feed in the file name without `.csv` appended to it
 
-        Debug.Log("Terrain File Type:: " + terrain_file);
+        // Debug.Log("Terrain File Type:: " + terrain_file); // this doesn't seem to be doing us any favors at the moment; it prints out a garbled mess Probably should delete.
 
         // split up the data by line
         string[] terrain_info = terrain_file.text.Split(new char[] { '\n' });
@@ -48,7 +54,11 @@ public class LoadTerrain : MonoBehaviour
         // Loop through the length of the list and create game objects
         // subtract 1 from length because Unity reads in an empty line at the end
         // start at i = 1 because we're giving our csv a header
-        //Debug.Log(terrain_info.Length);
+        
+        // create a dictonary to fill with all terrain objects
+
+        // terrain_objects_data_table = new UXFDataTable(1,"test");
+
         for (int i = 1; i < terrain_info.Length -1; i++)
         {   
             // Split up terrain by commas to give us each column
@@ -75,6 +85,11 @@ public class LoadTerrain : MonoBehaviour
             }
 
             Debug.Log("Tar Loc:" + target.transform.position.ToString("F4"));
+
+            // new_row = new UXFDataRow[1, target.transform.position.ToString("F4")];
+
+            // terrain_objects_data_table.AddCompleteRow(new_row);
+
         }
     }
 }
