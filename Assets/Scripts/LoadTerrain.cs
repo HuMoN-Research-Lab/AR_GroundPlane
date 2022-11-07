@@ -16,7 +16,9 @@ public class LoadTerrain : MonoBehaviour
 
     private Dictionary<int,Vector3> terrain_objects_dict;
 
-    private UXFDataRow new_row;
+    private string terrain_dict_file_name;
+
+
 
     public void GenerateTerrain(Trial trial)
     {
@@ -96,6 +98,10 @@ public class LoadTerrain : MonoBehaviour
         {
             Debug.Log("Dictionary items:" + item);
         }
+
+        terrain_dict_file_name = String.Format("terrain_dict-trialnum-" + trial.number + "-filename-" + file_name);
+
+        Trial.SaveJSONSerializableObject(terrain_objects_dict, terrain_dict_file_name);
 
     }
 }
