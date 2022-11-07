@@ -101,7 +101,8 @@ public class LoadTerrain : MonoBehaviour
 
         terrain_dict_file_name = String.Format("terrain_dict-trialnum-" + trial.number + "-filename-" + file_name);
 
-        Trial.SaveJSONSerializableObject(terrain_objects_dict, terrain_dict_file_name);
+        // https://github.com/azixMcAze/Unity-SerializableDictionary <- need this
+        // consider writing and saving a `.csv` file instead of a dictionary
 
     }
 }
