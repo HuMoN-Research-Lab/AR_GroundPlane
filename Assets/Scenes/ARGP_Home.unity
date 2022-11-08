@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.4366756, g: 0.48427194, b: 0.5645252, a: 1}
+  m_IndirectSpecularColor: {r: 0.4366757, g: 0.48427194, b: 0.5645252, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -268,6 +268,7 @@ GameObject:
   - component: {fileID: 680664932}
   - component: {fileID: 680664933}
   - component: {fileID: 680664934}
+  - component: {fileID: 680664935}
   m_Layer: 0
   m_Name: ScriptHolder
   m_TagString: Untagged
@@ -411,6 +412,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6eb9704473362ce4b8ace8e4587cf919, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &680664935
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 680664924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ca8491b7e09ba34da457f9493c1ab8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  file_path: D:\data_storage\argp_data\unity_testing
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -1151,7 +1165,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!65 &1803798471
 BoxCollider:
   m_ObjectHideFlags: 0

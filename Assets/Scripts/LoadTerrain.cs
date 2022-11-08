@@ -10,19 +10,22 @@ public class LoadTerrain : MonoBehaviour
 
     //public Session session;
     public GameObject prefab_target;
+
     public bool is_mirrored;
+
     private string file_name;
+
     private TextAsset terrain_file;
 
-    private Dictionary<int,Vector3> terrain_objects_dict;
+    private Dictionary<int,string> terrain_objects_dict;
 
     private string terrain_dict_file_name;
 
-
+    WriteCSV writeCSV;
 
     public void GenerateTerrain(Trial trial)
     {
-
+        
         Debug.Log("Terrain is Loaded");
         Debug.Log("is_mirrored:" + is_mirrored);
         // get the positions of each of the projectors
@@ -48,8 +51,6 @@ public class LoadTerrain : MonoBehaviour
 
         TextAsset terrain_file = Resources.Load<TextAsset>(file_name); // feed in the file name without `.csv` appended to it
 
-        // Debug.Log("Terrain File Type:: " + terrain_file); // this doesn't seem to be doing us any favors at the moment; it prints out a garbled mess Probably should delete.
-
         // split up the data by line
         string[] terrain_info = terrain_file.text.Split(new char[] { '\n' });
 
@@ -59,7 +60,7 @@ public class LoadTerrain : MonoBehaviour
         
         // create a dictonary to fill with all terrain objects
 
-        terrain_objects_dict = new Dictionary<int, Vector3>();
+        terrain_objects_dict = new Dictionary<int, string>();
 
         for (int i = 1; i < terrain_info.Length -1; i++)
         {   
@@ -88,20 +89,16 @@ public class LoadTerrain : MonoBehaviour
 
             Debug.Log("Tar Loc:" + target.transform.position.ToString("F4"));
 
-            terrain_objects_dict.Add(i,target.transform.position);
+            terrain_objects_dict.Add(i,target.transform.position.ToString("F4"));
 
         }
 
-        Debug.Log("Terrain Dictionary: "+ terrain_objects_dict);
+        writeCSV=GameObject.Find("ScriptHolder").GetComponent<WriteCSV>();
 
-        foreach(var item in terrain_objects_dict)
-        {
-            Debug.Log("Dictionary items:" + item);
-        }
+        terrain_dict_file_name = String.Format("terrain_data-trialnum-" + trial.number + "-filename-" + file_name);
 
-        terrain_dict_file_name = String.Format("terrain_dict-trialnum-" + trial.number + "-filename-" + file_name);
+        writeCSV.WriteTerrainObjectsOnTrialStart(terrain_dict_file_name, terrain_objects_dict);
 
-        // https://github.com/azixMcAze/Unity-SerializableDictionary <- need this
         // consider writing and saving a `.csv` file instead of a dictionary
 
     }
