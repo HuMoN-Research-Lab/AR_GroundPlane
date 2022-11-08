@@ -20,9 +20,7 @@ public class WriteCSV : MonoBehaviour
 
         try
         {
-            // Build the file path based off of the UXF folder
-
-            // add the position of the projector to the position of the target        
+            // Build the file path based off of the UXF folder     
 
             // translate what I'm saving into qualisys coordinates
 
