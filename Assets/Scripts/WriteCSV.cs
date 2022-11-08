@@ -28,7 +28,7 @@ public class WriteCSV : MonoBehaviour
 
             // for later: if there are no targets collided with, save an empty file
 
-            // save start end box positions - can I save the start/end boxes as text files?    
+            // save start end box positions - can I save the start/end boxes as text files? -> don't lose time over this though
 
             using (System.IO.StreamWriter file = new System.IO.StreamWriter(@file_path_with_file_name, true)) 
             {
