@@ -95,7 +95,7 @@ public class LoadTerrain : MonoBehaviour
 
         writeCSV=GameObject.Find("ScriptHolder").GetComponent<WriteCSV>();
 
-        terrain_dict_file_name = String.Format("terrain_data-trialnum-" + trial.number + "-filename-" + file_name);
+        terrain_dict_file_name = String.Format("target_data-trialnum-" + trial.number + "-filename-" + file_name);
 
         writeCSV.WriteTerrainObjectsOnTrialStart(terrain_dict_file_name, terrain_objects_dict);
 

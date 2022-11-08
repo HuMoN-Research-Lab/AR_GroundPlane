@@ -20,8 +20,17 @@ public class WriteCSV : MonoBehaviour
 
         try
         {
-                        
-            using (System.IO.StreamWriter file = new System.IO.StreamWriter(@file_path_with_file_name, true))
+            // Build the file path based off of the UXF folder
+
+            // add the position of the projector to the position of the target        
+
+            // translate what I'm saving into qualisys coordinates
+
+            // for later: if there are no targets collided with, save an empty file
+
+            // save start end box positions - can I save the start/end boxes as text files?    
+
+            using (System.IO.StreamWriter file = new System.IO.StreamWriter(@file_path_with_file_name, true)) 
             {
                 Debug.LogWarning("Files are about to be saved, make sure that you're working in a clean & new folder!!!");
 
@@ -45,7 +54,7 @@ public class WriteCSV : MonoBehaviour
         }   
         catch(Exception ex)
         {
-            throw new ApplicationException("Write CSV is broken!:", ex);
+            throw new ApplicationException("WriteCSV is broken!:", ex);
         }
 
     }
