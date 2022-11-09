@@ -28,6 +28,8 @@ public class WriteCSV : MonoBehaviour
 
             // save start end box positions - can I save the start/end boxes as text files? -> don't lose time over this though
 
+            // save intelligent timestamp data
+
             using (System.IO.StreamWriter file = new System.IO.StreamWriter(@file_path_with_file_name, true)) 
             {
                 Debug.LogWarning("Files are about to be saved, make sure that you're working in a clean & new folder!!!");
