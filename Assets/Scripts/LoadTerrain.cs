@@ -99,7 +99,5 @@ public class LoadTerrain : MonoBehaviour
 
         writeCSV.WriteTerrainObjectsOnTrialStart(terrain_dict_file_name, terrain_objects_dict);
 
-        // consider writing and saving a `.csv` file instead of a dictionary
-
     }
 }
