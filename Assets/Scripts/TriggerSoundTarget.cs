@@ -40,7 +40,9 @@ public class TriggerSoundTarget : MonoBehaviour
                 // play the collect sound (at the same position as the target, 100% volume)
                 AudioSource.PlayClipAtPoint(soundTrigger, transform.position, 1.0f);
                 sound_has_played = true;
-                Debug.Log("Triggered Tar:" + colliding_object.transform.position.ToString("F4"));
+                System.DateTime epochStart = new System.DateTime(1970, 1, 1, 0, 0, 0, System.DateTimeKind.Utc);
+                int cur_time = (int)(System.DateTime.UtcNow - epochStart).TotalSeconds;
+                Debug.Log("Triggered Tar:" + colliding_object.transform.position.ToString("F4") + " at Epoch Time " + cur_time.ToString());
             }
         }
         

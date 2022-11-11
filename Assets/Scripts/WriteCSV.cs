@@ -8,8 +8,6 @@ using UXF;
 public class WriteCSV : MonoBehaviour
 {
     
-    // private String object_position_string;
-
     public FileSaver fileSaver;
 
     public void WriteTerrainObjectsOnTrialStart(String terrain_dict_file_name, Dictionary<int,string> terrain_objects_dict)
