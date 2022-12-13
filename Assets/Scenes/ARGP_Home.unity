@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.4366756, g: 0.48427194, b: 0.5645252, a: 1}
+  m_IndirectSpecularColor: {r: 0.4366757, g: 0.48427194, b: 0.5645252, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -123,11 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &139027738 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1970900254558334, guid: 0a3b6392f04558844bd340e68ced1ff9, type: 3}
-  m_PrefabInstance: {fileID: 777839397}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &329207883
 GameObject:
   m_ObjectHideFlags: 0
@@ -264,10 +259,10 @@ GameObject:
   - component: {fileID: 680664930}
   - component: {fileID: 680664927}
   - component: {fileID: 680664929}
-  - component: {fileID: 680664928}
   - component: {fileID: 680664932}
   - component: {fileID: 680664933}
   - component: {fileID: 680664934}
+  - component: {fileID: 680664935}
   m_Layer: 0
   m_Name: ScriptHolder
   m_TagString: Untagged
@@ -318,18 +313,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab_target: {fileID: 6191735313798834387, guid: eddd8aa18d65f4b42b025520487cefe3, type: 3}
   is_mirrored: 0
---- !u!114 &680664928
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 680664924}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9d07ef1844325b440bb4789ee0c0534f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &680664929
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -411,6 +394,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6eb9704473362ce4b8ace8e4587cf919, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &680664935
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 680664924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ca8491b7e09ba34da457f9493c1ab8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  file_path: D:\data_storage\argp_data\unity_testing
+  fileSaver: {fileID: 1031618742}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -772,6 +769,10 @@ PrefabInstance:
       propertyPath: m_AnchorMin.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6301449615104170796, guid: 0a3b6392f04558844bd340e68ced1ff9, type: 3}
+      propertyPath: dataSaveLocation
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7587908648779123904, guid: 0a3b6392f04558844bd340e68ced1ff9, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -843,28 +844,23 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 114916036141644208, guid: 0a3b6392f04558844bd340e68ced1ff9, type: 3}
   m_PrefabInstance: {fileID: 777839397}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 139027738}
+  m_GameObject: {fileID: 0}
   m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fa9f2505d11cc9e4aa44357b47b12905, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &777839401
+--- !u!114 &1031618742 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 6301449615104170796, guid: 0a3b6392f04558844bd340e68ced1ff9, type: 3}
+  m_PrefabInstance: {fileID: 777839397}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 139027738}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 687ae971276a0ce43b007cabf739be5b, type: 3}
+  m_Script: {fileID: 11500000, guid: c998d809839214b438495bbe6d805bd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab_Start_Bar: {fileID: 0}
-  prefab_End_Bar: {fileID: 0}
-  left_bar_location_xyz: {x: 0, y: 0, z: 0}
-  right_bar_location_xyz: {x: 0, y: 0, z: 0}
 --- !u!1 &1272964765
 GameObject:
   m_ObjectHideFlags: 0
@@ -1151,7 +1147,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!65 &1803798471
 BoxCollider:
   m_ObjectHideFlags: 0

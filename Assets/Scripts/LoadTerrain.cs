@@ -10,13 +10,22 @@ public class LoadTerrain : MonoBehaviour
 
     //public Session session;
     public GameObject prefab_target;
+
     public bool is_mirrored;
+
     private string file_name;
+
     private TextAsset terrain_file;
+
+    private Dictionary<int,string> terrain_objects_dict;
+
+    private string terrain_dict_file_name;
+
+    WriteCSV writeCSV;
 
     public void GenerateTerrain(Trial trial)
     {
-
+        
         Debug.Log("Terrain is Loaded");
         Debug.Log("is_mirrored:" + is_mirrored);
         // get the positions of each of the projectors
@@ -38,9 +47,9 @@ public class LoadTerrain : MonoBehaviour
         
         Debug.Log("Name of Trial File: " + file_name);
 
-        TextAsset terrain_file = Resources.Load<TextAsset>(file_name); // feed in the file name without `.csv` appended to it
+        Debug.Log("trialnum-" + trial.number + "-filename-" + file_name); // this will be the name of the file we're saving
 
-        Debug.Log("Terrain File Type:: " + terrain_file);
+        TextAsset terrain_file = Resources.Load<TextAsset>(file_name); // feed in the file name without `.csv` appended to it
 
         // split up the data by line
         string[] terrain_info = terrain_file.text.Split(new char[] { '\n' });
@@ -48,7 +57,11 @@ public class LoadTerrain : MonoBehaviour
         // Loop through the length of the list and create game objects
         // subtract 1 from length because Unity reads in an empty line at the end
         // start at i = 1 because we're giving our csv a header
-        //Debug.Log(terrain_info.Length);
+        
+        // create a dictonary to fill with all terrain objects
+
+        terrain_objects_dict = new Dictionary<int, string>();
+
         for (int i = 1; i < terrain_info.Length -1; i++)
         {   
             // Split up terrain by commas to give us each column
@@ -75,6 +88,16 @@ public class LoadTerrain : MonoBehaviour
             }
 
             Debug.Log("Tar Loc:" + target.transform.position.ToString("F4"));
+
+            terrain_objects_dict.Add(i,target.transform.position.ToString("F4"));
+
         }
+
+        writeCSV=GameObject.Find("ScriptHolder").GetComponent<WriteCSV>();
+
+        terrain_dict_file_name = String.Format("target_data-trialnum-" + trial.number + "-filename-" + file_name);
+
+        writeCSV.WriteTerrainObjectsOnTrialStart(terrain_dict_file_name, terrain_objects_dict);
+
     }
 }
