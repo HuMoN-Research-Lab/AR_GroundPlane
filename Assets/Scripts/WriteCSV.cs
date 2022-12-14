@@ -47,7 +47,7 @@ public class WriteCSV : MonoBehaviour
 
                     object_position_string = object_position_string.Substring(1, string_length);
 
-                    float cur_time = (float)(System.DateTime.UtcNow - epochStart).TotalSeconds;
+                    int cur_time = (int)(System.DateTime.UtcNow - epochStart).TotalSeconds;
 
                     string string_to_write = String.Format(cur_time.ToString() + ',' + object_position_string);
 
