@@ -20,7 +20,7 @@ public class WriteCSV : MonoBehaviour
         // Create the folder so we can save the data -> this doesn't seem to break any other UXF processes
         var folder = Directory.CreateDirectory(sessionPathWithTerrainFolder); 
 
-        string file_path_with_file_name = String.Format(sessionPathWithTerrainFolder + "\\" + terrain_dict_file_name + ".csv");
+        string full_file_path = String.Format(sessionPathWithTerrainFolder + "\\" + terrain_dict_file_name + ".csv");
 
         System.DateTime epochStart = new System.DateTime(1970, 1, 1, 0, 0, 0, System.DateTimeKind.Utc);
 
@@ -32,7 +32,7 @@ public class WriteCSV : MonoBehaviour
 
             // save intelligent timestamp data
 
-            using (System.IO.StreamWriter file = new System.IO.StreamWriter(@file_path_with_file_name, true)) 
+            using (System.IO.StreamWriter file = new System.IO.StreamWriter(@full_file_path, true)) 
             {
 
                 file.WriteLine("epoch_time_stamp, X, Y, Z");
@@ -47,14 +47,14 @@ public class WriteCSV : MonoBehaviour
 
                     object_position_string = object_position_string.Substring(1, string_length);
 
-                    int cur_time = (int)(System.DateTime.UtcNow - epochStart).TotalSeconds;
+                    float cur_time = (float)(System.DateTime.UtcNow - epochStart).TotalSeconds;
 
                     string string_to_write = String.Format(cur_time.ToString() + ',' + object_position_string);
 
                     file.WriteLine(string_to_write);
                 }
 
-                Debug.Log("Inside of WriteCSV! Files being saved here : " + sessionPathWithTerrainFolder);
+                Debug.Log("Inside of WriteCSV! Files being saved here : " + full_file_path);
             }   
         }   
         catch(Exception ex)
