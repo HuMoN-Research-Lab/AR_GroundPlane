@@ -1,10 +1,4 @@
 X,Y,Z,Prefab,Projector,Filler
-0,0,-1.25,tar,P1,NaN
 0,0,0,tar,P1,NaN
-0,0,1.25,tar,P1,NaN
-0,0,1.25,tar,P2,NaN
 0,0,0,tar,P2,NaN
-0,0,-1.25,tar,P2,NaN
-0,0,-1.25,tar,P3,NaN
 0,0,0,tar,P3,NaN
-0,0,1.25,tar,P3,NaN
