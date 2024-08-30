@@ -10,7 +10,7 @@ public class TimeOutTimer : MonoBehaviour
     public float time_out_threshold;
     public AudioClip sad_sound;
 
-    
+
     IEnumerator Countdown()
     {
         Debug.Log("Timer has started");
@@ -33,15 +33,29 @@ public class TimeOutTimer : MonoBehaviour
 
     }
 
-    void OnTriggerEnter()
+    // void OnTriggerEnter()
+    // {
+    //     string this_session_string = Session.instance.CurrentTrial.settings.GetString("File");
+
+    //     Debug.Log(this_session_string);
+
+    //     gameObject.GetComponent<BoxCollider>().enabled = false;
+
+    //     if(!this_session_string.Equals("Calibration") & !this_session_string.Equals("Frisbee"))
+    //     {
+    //         StartCoroutine(Countdown());
+    //     }
+    // }
+     void OnTriggerExit(Collider other)
     {
+        // Remove the tag check to allow any object to trigger the countdown
         string this_session_string = Session.instance.CurrentTrial.settings.GetString("File");
 
         Debug.Log(this_session_string);
 
         gameObject.GetComponent<BoxCollider>().enabled = false;
 
-        if(!this_session_string.Equals("Calibration") & !this_session_string.Equals("Frisbee"))
+        if (!this_session_string.Equals("Calibration") && !this_session_string.Equals("Frisbee"))
         {
             StartCoroutine(Countdown());
         }

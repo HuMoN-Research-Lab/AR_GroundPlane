@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 4009828415230610292}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.3, y: 0.001, z: 0.1}
+  m_LocalScale: {x: 0.47, y: 0.001, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -110,5 +110,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bbc3eca34e4c3747af876ba50db28b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  time_out_threshold: 10
+  time_out_threshold: 12
   sad_sound: {fileID: 8300000, guid: 5c8bdd53bc2685446902742d1287e631, type: 3}
