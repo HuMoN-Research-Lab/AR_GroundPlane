@@ -24,7 +24,7 @@ public class GenerateStartEndBars : MonoBehaviour
 
             if(other.transform.position.z < 0)
             {
-                // If participant starts on the left, have the start bar start on the left and the end bar on the right
+                // If participant starts on the left, have the start bar start on the left and the end bar on the right.
                 start_bar.transform.position = left_bar_location_xyz;
                 end_bar.transform.position = right_bar_location_xyz;
 
