@@ -31,7 +31,7 @@ public class GenerateStartEndBars : MonoBehaviour
             }
             else if(other.transform.position.z > 0)
             {
-                // start bar on the *right*, end bar on the *left* :/
+                // start bar on the *right*, end bar on the *left*  
                 start_bar.transform.position = right_bar_location_xyz;
                 end_bar.transform.position = left_bar_location_xyz;
             }
