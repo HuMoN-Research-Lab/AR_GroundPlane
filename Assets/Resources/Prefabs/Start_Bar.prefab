@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 4009828415230610289}
   - component: {fileID: 4009828415230610294}
   - component: {fileID: 3365681987026446783}
+  - component: {fileID: -937055963358463872}
+  - component: {fileID: 2873691960919826721}
   m_Layer: 0
   m_Name: Start_Bar
   m_TagString: Terrain_Feature
@@ -112,3 +114,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   time_out_threshold: 12
   sad_sound: {fileID: 8300000, guid: 5c8bdd53bc2685446902742d1287e631, type: 3}
+--- !u!114 &-937055963358463872
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4009828415230610292}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 522c76cbcc779aa4bbbfc07816f5916d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  terrain_bool: {fileID: 0}
+--- !u!114 &2873691960919826721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4009828415230610292}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 687ae971276a0ce43b007cabf739be5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab_Start_Bar: {fileID: 4009828415230610292}
+  prefab_End_Bar: {fileID: 2656543295699234835, guid: 524c68163dd98184aa1712d461a7edf7, type: 3}
+  left_bar_location_xyz: {x: 0.36, y: 0, z: -3.91}
+  right_bar_location_xyz: {x: 0.26, y: 0, z: 8.15}
