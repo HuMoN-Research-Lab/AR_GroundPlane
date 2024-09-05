@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2656543295699234833}
   - component: {fileID: 2656543295699234836}
   - component: {fileID: 8686465010695417566}
+  - component: {fileID: 3306908310447369333}
   m_Layer: 0
   m_Name: End_Bar
   m_TagString: Terrain_Feature
@@ -124,3 +125,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   happy_sound: {fileID: 8300000, guid: edd0b8d3493e3de418dd5842cbb0b983, type: 3}
+--- !u!114 &3306908310447369333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2656543295699234835}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 687ae971276a0ce43b007cabf739be5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab_Start_Bar: {fileID: 4009828415230610292, guid: 116165475db5d2a408a7ee0f8539fd8b, type: 3}
+  prefab_End_Bar: {fileID: 2656543295699234835}
+  left_bar_location_xyz: {x: 0.36, y: 0, z: -3.91}
+  right_bar_location_xyz: {x: 0.26, y: 0, z: 8.15}
