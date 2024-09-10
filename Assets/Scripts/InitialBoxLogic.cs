@@ -41,7 +41,7 @@ public class InitialBoxLogic : MonoBehaviour
         {
             // Disable or destroy the initial box after the foot exits
             Debug.Log("Foot exited the initial box. Destroying the box...");
-            Destroy(gameObject); // This destroys the trigger box itself
+            Destroy(gameObject, 0.1f); // This destroys the trigger box itself after 0.1 delay
         }
     }
 }
