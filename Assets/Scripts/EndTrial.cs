@@ -1,26 +1,47 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 using UXF;
 
 public class EndTrial : MonoBehaviour
 {
-    void OnTriggerEnter()
+    public float delayInSeconds = 1f; // Set the delay time in seconds
+
+    void OnTriggerExit()
     {
-        if(Session.instance.InTrial) // I do not need to have a public session reference; I can simply use this Session.instance to access the current "session" of UXF
+        // Start a coroutine to handle the delay before ending the trial
+        StartCoroutine(DelayedEndTrial());
+    }
+
+    // Coroutine that handles the delay before ending the trial
+    IEnumerator DelayedEndTrial()
+    {
+        if (Session.instance.InTrial) // Check if the session is in a trial
         {
-            Debug.Log("Ending Trial");
+            Debug.Log("Trigger exited. Waiting before ending the trial...");
+
+            // Wait for the specified delay time
+            yield return new WaitForSeconds(delayInSeconds);
+
+            // End the current trial
+            Debug.Log("Ending Trial after delay");
             Session.instance.EndCurrentTrial();
 
-            GameObject[] terrain_features;
-            terrain_features = GameObject.FindGameObjectsWithTag("Terrain_Feature");
-
-            foreach(GameObject tf in terrain_features)
+            // Find all terrain features and destroy them, excluding Start_Bar
+            GameObject[] terrain_features = GameObject.FindGameObjectsWithTag("Terrain_Feature");
+            foreach (GameObject tf in terrain_features)
             {
-                Destroy(tf);
+                // Exclude the Start_Bar from being destroyed
+                if (tf.name != "Start_Bar(Clone)") 
+                {
+                    Debug.Log($"Destroying: {tf.name}");
+                    Destroy(tf);
+                }
+                else
+                {
+                    Debug.Log($"Excluding: {tf.name} from destruction.");
+                }
             }
         }
     }
-    
 }
