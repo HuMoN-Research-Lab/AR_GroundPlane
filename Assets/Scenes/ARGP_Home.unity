@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.4366756, g: 0.48427194, b: 0.5645252, a: 1}
+  m_IndirectSpecularColor: {r: 0.4366757, g: 0.48427194, b: 0.5645252, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -865,6 +865,10 @@ PrefabInstance:
       propertyPath: terrain_bool
       value: 
       objectReference: {fileID: 680664927}
+    - target: {fileID: 4009828415230610289, guid: 116165475db5d2a408a7ee0f8539fd8b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: bae3696a66699244eb666af3d785cd1d, type: 2}
     - target: {fileID: 4009828415230610292, guid: 116165475db5d2a408a7ee0f8539fd8b, type: 3}
       propertyPath: m_Name
       value: Initial_box
@@ -1017,7 +1021,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04b544b519e24d14e98b7f926fdf60a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab_Start_Bar: {fileID: 4009828415230610292, guid: 116165475db5d2a408a7ee0f8539fd8b, type: 3}
+  prefab_Start_Bar: {fileID: 1332454649}
   left_bar_location_xyz: {x: 0.36, y: 0, z: -3.91}
   right_bar_location_xyz: {x: 0.26, y: 0, z: 8.15}
 --- !u!1 &1340256283
