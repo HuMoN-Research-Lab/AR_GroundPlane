@@ -110,5 +110,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: feacb81a70e9a6d4eab6566c46b46908, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab_End_Bar: {fileID: 2656543295699234835, guid: 524c68163dd98184aa1712d461a7edf7, type: 3}
+  prefab_End_Bar: {fileID: 2656543295699234835, guid: fa8d52a3290246a449401939a0b98547, type: 3}
   end_bar_location_xyz: {x: 0.26, y: 0, z: 8.15}
