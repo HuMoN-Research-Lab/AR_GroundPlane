@@ -1,3 +1,5 @@
+using UnityEngine;
+
 public class RevelationsBarSelfDestruct : MonoBehaviour
 {
     public float destructionDelay = 2f;
