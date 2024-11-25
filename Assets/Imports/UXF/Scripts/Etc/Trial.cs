@@ -15,6 +15,7 @@ namespace UXF
     [Serializable]
     public class Trial : IExperimentUnit, IDataAssociatable
     {
+        public bool needsRepeat = false;
 
         /// <summary>
         /// Returns non-zero indexed trial number. This is generated based on its position in the block, and the ordering of the blocks within the session.

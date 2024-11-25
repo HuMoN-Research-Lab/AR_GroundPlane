@@ -42,7 +42,7 @@ public class TriggerSoundTarget : MonoBehaviour
                 sound_has_played = true;
                 System.DateTime epochStart = new System.DateTime(1970, 1, 1, 0, 0, 0, System.DateTimeKind.Utc);
                 int cur_time = (int)(System.DateTime.UtcNow - epochStart).TotalSeconds;
-                Debug.Log("Triggered Tar:" + colliding_object.transform.position.ToString("F4") + " at Epoch Time " + cur_time.ToString());
+                //Debug.Log("Triggered Tar:" + colliding_object.transform.position.ToString("F4") + " at Epoch Time " + cur_time.ToString());
             }
         }
         

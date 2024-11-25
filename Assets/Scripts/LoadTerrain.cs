@@ -25,7 +25,8 @@ public class LoadTerrain : MonoBehaviour
 
     public void GenerateTerrain(Trial trial)
     {
-        
+        ClearTerrainFeatures();
+
         Debug.Log("Terrain is Loaded");
         Debug.Log("is_mirrored:" + is_mirrored);
         // get the positions of each of the projectors
@@ -65,7 +66,7 @@ public class LoadTerrain : MonoBehaviour
         for (int i = 1; i < terrain_info.Length -1; i++)
         {   
             // Split up terrain by commas to give us each column
-            string[] col = terrain_info[i].Split(new char[] { ',' } );
+            string[] col = terrain_info[i].Split(new char[] { ',' } ); 
         
             GameObject target = Instantiate(prefab_target);
 
@@ -87,7 +88,7 @@ public class LoadTerrain : MonoBehaviour
                 target.transform.position = new Vector3(float.Parse(col[0])+Projector3_Pos_XYZ[0],0,float.Parse(col[2])+Projector3_Pos_XYZ[2] );
             }
 
-            Debug.Log("Tar Loc:" + target.transform.position.ToString("F4"));
+            // Debug.Log("Tar Loc:" + target.transform.position.ToString("F4"));
 
             terrain_objects_dict.Add(i,target.transform.position.ToString("F4"));
 
@@ -100,4 +101,14 @@ public class LoadTerrain : MonoBehaviour
         writeCSV.WriteTerrainObjectsOnTrialStart(terrain_dict_file_name, terrain_objects_dict);
 
     }
+    public void ClearTerrainFeatures()
+        {
+            GameObject[] terrainFeatures = GameObject.FindGameObjectsWithTag("Terrain_Feature");
+            foreach (GameObject tf in terrainFeatures)
+            {
+                Destroy(tf);
+            }
+        }
+
 }
+
