@@ -47,9 +47,19 @@ public class LoadTerrain : MonoBehaviour
         }
         
         Debug.Log("Name of Trial File: " + file_name);
+        string trialName = "trialnum-" + trial.number + "-filename-" + file_name;
+        Debug.Log(trialName); // this will be the name of the file we're saving
 
-        Debug.Log("trialnum-" + trial.number + "-filename-" + file_name); // this will be the name of the file we're saving
-
+        // Update the UI with the trial name
+        TrialNameDisplay trialNameDisplay = FindObjectOfType<TrialNameDisplay>();
+        if (trialNameDisplay != null)
+        {
+            trialNameDisplay.UpdateTrialNameDisplay(trialName);
+        }
+        else
+        {
+            Debug.LogError("TrialNameDisplay component not found!");
+        }
         TextAsset terrain_file = Resources.Load<TextAsset>(file_name); // feed in the file name without `.csv` appended to it
 
         // split up the data by line
